@@ -1,0 +1,100 @@
+{
+  "_comentario": "Catálogo de apps. Para agregar una app nueva: copia un bloque, cambia los textos y pon sus imágenes en assets/img/apps/<id>/. status: 'live' muestra el botón de Google Play; 'soon' muestra 'Próximamente'.",
+  "apps": [
+    {
+      "id": "gloopy",
+      "name": "Gloopy Blocks",
+      "category": "games",
+      "status": "soon",
+      "accent": "#8B5CF6",
+      "accent2": "#FF6FA8",
+      "icon": "assets/img/apps/gloopy/icon.webp",
+      "shots": { "es": 7 },
+      "playId": "com.gloopy.blocks",
+      "privacy": "https://horizon09222026-dot.github.io/gloopy-blocks-legal/privacy.html",
+      "langs": 7,
+      "i18n": {
+        "es": {
+          "kicker": "Juego · Puzzle de bloques",
+          "tagline": "Supera tu récord, reta a tus amigos y no rompas tu racha.",
+          "desc": "Coloca bloques, completa filas y columnas y encadena combos que explotan. Un reto rápido para entrenar la mente en 3 minutos al día.",
+          "features": ["Reto del día: el mismo tablero para todos", "Duelos con amigos por enlace", "Modo Aventura con cientos de niveles y modo Clásico infinito", "Más de 140 prendas para Gloopy", "Juega sin conexión y sin registro"],
+          "chips": ["13+", "Sin conexión", "7 idiomas"],
+          "price": "Gratis · anuncios justos"
+        },
+        "en": {
+          "kicker": "Game · Block puzzle",
+          "tagline": "Beat your best, challenge friends and keep your streak alive.",
+          "desc": "Place blocks, clear rows and columns and chain combos that explode. A quick brain workout in 3 minutes a day.",
+          "features": ["Daily Challenge: the same board for everyone", "Duels with friends through a link", "Adventure mode with hundreds of levels plus endless Classic", "140+ outfits for Gloopy", "Play offline, no sign-up"],
+          "chips": ["13+", "Offline", "7 languages"],
+          "price": "Free · fair ads"
+        }
+      }
+    },
+    {
+      "id": "mundo-chispa",
+      "name": "Mundo Chispa",
+      "category": "education",
+      "status": "soon",
+      "accent": "#FF5FA2",
+      "accent2": "#FFC93C",
+      "icon": "assets/img/apps/mundo-chispa/icon.webp",
+      "shots": { "es": 7, "en": 7 },
+      "playId": "com.horizondevelopment.mundochispa",
+      "privacy": "mundo-chispa/privacidad/",
+      "langs": 6,
+      "i18n": {
+        "es": {
+          "kicker": "Educación · 2 a 6 años",
+          "tagline": "Colores, formas, números, letras y lógica. ¡Aprender jugando!",
+          "desc": "Chispi, una estrellita muy alegre, acompaña a los más pequeños en 250 niveles. Cada instrucción se escucha en voz alta: no hace falta saber leer.",
+          "features": ["5 juegos con 50 niveles cada uno", "Con voz: ideal para prelectores", "Stickers, medallas y certificado final", "Zona de padres con estadísticas", "Límite de tiempo de pantalla"],
+          "chips": ["2–6 años", "Con voz", "6 idiomas"],
+          "price": "Gratis para probar"
+        },
+        "en": {
+          "kicker": "Education · Ages 2 to 6",
+          "tagline": "Colours, shapes, numbers, letters and logic. Learn by playing!",
+          "desc": "Chispi, a cheerful little star, guides young children through 250 levels. Every instruction is read aloud, so no reading is needed.",
+          "features": ["5 games with 50 levels each", "Voice-guided, perfect for pre-readers", "Stickers, medals and a final certificate", "Parents' area with progress stats", "Screen-time limits"],
+          "chips": ["Ages 2–6", "Voice-guided", "6 languages"],
+          "price": "Free to try"
+        }
+      }
+    },
+    {
+      "id": "glucodiario",
+      "name": "GlucoDiario",
+      "category": "health",
+      "status": "soon",
+      "accent": "#14B8A6",
+      "accent2": "#0F766E",
+      "icon": "assets/img/apps/glucodiario/icon.webp",
+      "shots": { "es": 7 },
+      "playId": "com.glucodiario.personal",
+      "privacy": "",
+      "langs": 1,
+      "i18n": {
+        "es": {
+          "kicker": "Salud · Para ti y tu familia",
+          "tagline": "Glucosa, presión y medicamentos en un solo lugar.",
+          "desc": "Lleva el control de salud de una persona o de un familiar: glucosa y comidas, medicamentos con recordatorios, presión, oxigenación, citas y reportes listos para mostrar en la consulta.",
+          "features": ["Tu día de un vistazo con tendencias", "Recordatorios e inventario de medicamentos", "Presión arterial y saturación de oxígeno", "Reportes para llevar al médico", "Tus datos se quedan en tu teléfono, con PIN opcional"],
+          "chips": ["Hasta 2 pacientes", "Sin cuentas", "Prueba 14 días"],
+          "price": "Prueba gratis de 14 días",
+          "note": "GlucoDiario es una herramienta de registro: no da indicaciones médicas ni reemplaza a tu profesional de salud."
+        },
+        "en": {
+          "kicker": "Health · For you and your family",
+          "tagline": "Glucose, blood pressure and medication in one place.",
+          "desc": "Track the health of a person or a family member: glucose and meals, medication with reminders, blood pressure, oxygen, appointments and reports ready for the doctor's visit.",
+          "features": ["Your day at a glance, with trends", "Medication reminders and stock", "Blood pressure and oxygen saturation", "Reports to take to the doctor", "Your data stays on your phone, optional PIN"],
+          "chips": ["Up to 2 patients", "No accounts", "14-day trial"],
+          "price": "14-day free trial",
+          "note": "GlucoDiario is a logging tool: it gives no medical advice and does not replace your health professional. Currently available in Spanish."
+        }
+      }
+    }
+  ]
+}

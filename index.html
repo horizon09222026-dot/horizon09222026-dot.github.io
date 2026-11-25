@@ -1,22 +1,299 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>horizonDevelopment</title>
-<style>
-  body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#ffe9a8,#ffd1ea);color:#2f2a55;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:16px;box-sizing:border-box}
-  main{background:#fff;border-radius:22px;padding:28px 26px;max-width:520px;box-shadow:0 10px 30px rgba(59,53,102,.12);text-align:center}
-  h1{margin:0 0 6px;font-size:28px}
-  a{color:#7a5cff;font-weight:700}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>horizonDevelopment · Apps para jugar, aprender y cuidarte</title>
+<meta name="description" content="Estudio independiente de apps: Gloopy Blocks (puzzle), Mundo Chispa (educativa para niños de 2 a 6 años) y GlucoDiario (control de salud). Privacidad primero, sin registro y sin conexión.">
+<meta name="theme-color" content="#0B0B1E">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://horizon09222026-dot.github.io/">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="horizonDevelopment">
+<meta property="og:title" content="horizonDevelopment · Apps para jugar, aprender y cuidarte">
+<meta property="og:description" content="Gloopy Blocks, Mundo Chispa y GlucoDiario. Apps hechas con cariño, privacidad primero.">
+<meta property="og:url" content="https://horizon09222026-dot.github.io/">
+<meta property="og:image" content="https://horizon09222026-dot.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=1">
+
+<script>
+  // Tema antes de pintar (evita parpadeo)
+  (function () {
+    try {
+      var t = localStorage.getItem('hd-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "horizonDevelopment",
+  "url": "https://horizon09222026-dot.github.io/",
+  "logo": "https://horizon09222026-dot.github.io/assets/img/icon-512.png",
+  "email": "horizon09222026@gmail.com"
+}
+</script>
+<script type="module" src="assets/js/main.js?v=1"></script>
 </head>
 <body>
-<main>
-  <h1>horizonDevelopment</h1>
-  <p>Apps educativas para niños.</p>
-  <p><b>Mundo Chispa</b> · <a href="mundo-chispa/privacidad/">Política de privacidad / Privacy policy</a></p>
-  <p>Contacto: <a href="mailto:horizon09222026@gmail.com">horizon09222026@gmail.com</a></p>
+<a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="horizonDevelopment">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg>
+      <span class="brand__text"><b>horizon</b>Development</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#apps" data-i18n="nav.apps">Apps</a>
+      <a href="#why" data-i18n="nav.why">Por qué</a>
+      <a href="#support" data-i18n="nav.support">Apóyanos</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="nav__tools">
+      <button class="icon-btn" id="langBtn" type="button" aria-label="Cambiar idioma / Change language"><span id="langLabel">EN</span></button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar tema claro u oscuro">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+      <a class="btn btn--sm btn--heart nav__cta" href="#support"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg><span data-i18n="nav.cta">Apoyar</span></a>
+      <button class="icon-btn nav__burger" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menú"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="#apps" data-i18n="nav.apps">Apps</a>
+    <a href="#why" data-i18n="nav.why">Por qué</a>
+    <a href="#support" data-i18n="nav.support">Apóyanos</a>
+    <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    <a class="btn btn--heart mobile-menu__cta" href="#support"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg><span data-i18n="nav.cta">Apoyar</span></a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <div class="from-banner" id="fromBanner" hidden></div>
+        <p class="eyebrow reveal"><span class="dot"></span><span data-i18n="hero.eyebrow">Estudio independiente de apps</span></p>
+        <h1 class="hero__title reveal" data-i18n-html="hero.title">Apps para <span class="grad">jugar</span>, <span class="grad">aprender</span> y <span class="grad">cuidarte</span>.</h1>
+        <p class="hero__lead reveal" data-i18n="hero.lead">Creamos apps sencillas, bonitas y respetuosas con tu privacidad: sin registros, sin conexión y pensadas para toda la familia.</p>
+        <div class="hero__ctas reveal">
+          <a class="btn btn--primary" href="#apps"><span data-i18n="hero.cta1">Descubre las apps</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#support"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg><span data-i18n="hero.cta2">Apoya el proyecto</span></a>
+        </div>
+        <ul class="hero__trust reveal">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#check"/></svg><span data-i18n="hero.t1">Sin cuentas</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#check"/></svg><span data-i18n="hero.t2">Funcionan sin internet</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#check"/></svg><span data-i18n="hero.t3">Varios idiomas</span></li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="orbit">
+          <div class="ring r1"></div><div class="ring r2"></div>
+          <div class="sun"></div>
+          <a class="float-icon fi-1" href="#app-gloopy" tabindex="-1"><img src="assets/img/apps/gloopy/icon.webp" alt="" width="128" height="128"></a>
+          <a class="float-icon fi-2" href="#app-mundo-chispa" tabindex="-1"><img src="assets/img/apps/mundo-chispa/icon.webp" alt="" width="128" height="128"></a>
+          <a class="float-icon fi-3" href="#app-glucodiario" tabindex="-1"><img src="assets/img/apps/glucodiario/icon.webp" alt="" width="128" height="128"></a>
+          <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#apps" aria-label="Bajar"><span></span></a>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats wrap" aria-label="En números">
+    <div class="stat reveal"><b data-count="3">3</b><span data-i18n="stats.apps">apps en camino</span></div>
+    <div class="stat reveal"><b data-count="7">7</b><span data-i18n="stats.langs">idiomas</span></div>
+    <div class="stat reveal"><b data-count="250" data-suffix="+">250+</b><span data-i18n="stats.levels">niveles para aprender</span></div>
+    <div class="stat reveal"><b data-count="0">0</b><span data-i18n="stats.accounts">cuentas obligatorias</span></div>
+  </section>
+
+  <!-- APPS -->
+  <section class="section" id="apps">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="eyebrow"><span class="dot"></span><span data-i18n="apps.eyebrow">Nuestro catálogo</span></p>
+        <h2 data-i18n="apps.title">Una app para cada momento</h2>
+        <p data-i18n="apps.lead">Juegos para despejar la mente, aprendizaje para los peques y herramientas para cuidar tu salud.</p>
+      </header>
+      <div class="filters reveal" role="group" aria-label="Filtrar apps">
+        <button class="chip is-active" type="button" aria-pressed="true" data-filter="all" data-i18n="filter.all">Todas</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="games" data-i18n="filter.games">Juegos</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="education" data-i18n="filter.education">Educación</button>
+        <button class="chip" type="button" aria-pressed="false" data-filter="health" data-i18n="filter.health">Salud</button>
+      </div>
+
+      <div class="cards" id="cards"></div>
+      <div class="spotlights" id="spotlights">
+        <noscript><p>Gloopy Blocks · Mundo Chispa · GlucoDiario</p></noscript>
+      </div>
+
+      <article class="soon-card reveal">
+        <div class="soon-card__icon" aria-hidden="true">+</div>
+        <div class="soon-card__text">
+          <h3 data-i18n="soon.title">La próxima app ya se está cocinando</h3>
+          <p data-i18n="soon.text">Cada app nueva aparecerá aquí. ¿Tienes una idea que te gustaría ver? Escríbenos.</p>
+        </div>
+        <a class="btn btn--ghost" href="#contact" data-i18n="soon.cta">Proponer una idea</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section section--alt" id="why">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="eyebrow"><span class="dot"></span><span data-i18n="why.eyebrow">Nuestra forma de hacer apps</span></p>
+        <h2 data-i18n="why.title">Hechas para personas, no para datos</h2>
+      </header>
+      <div class="bento">
+        <article class="tile tile--big reveal">
+          <div class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 data-i18n="why.t1">Privacidad primero</h3>
+          <p data-i18n="why.d1">Sin cuentas ni registros. Tu información se queda en tu dispositivo y tú decides si haces un respaldo.</p>
+          <div class="pin-anim" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </article>
+        <article class="tile reveal">
+          <div class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1.2"/><path d="M3 3l18 18"/></svg></div>
+          <h3 data-i18n="why.t2">Sin internet</h3>
+          <p data-i18n="why.d2">Funcionan en el avión, en el bus o donde no hay señal.</p>
+        </article>
+        <article class="tile reveal">
+          <div class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
+          <h3 data-i18n="why.t3">En tu idioma</h3>
+          <p data-i18n="why.d3">Español, inglés, portugués, francés, alemán, italiano y japonés.</p>
+        </article>
+        <article class="tile reveal">
+          <div class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8l7 1.5L19 8M12 9.5V15m0 0l-3 6m3-6l3 6"/></svg></div>
+          <h3 data-i18n="why.t4">Accesibles</h3>
+          <p data-i18n="why.d4">Texto grande, alto contraste, instrucciones con voz y botones fáciles de tocar.</p>
+        </article>
+        <article class="tile tile--wide reveal">
+          <div class="tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 4.5 7.3 4.5c2 0 3.5 1.1 4.7 2.7 1.2-1.6 2.7-2.7 4.7-2.7 3.7 0 5.9 3.9 4.6 7.3C19.5 16.4 12 21 12 21z"/></svg></div>
+          <div>
+            <h3 data-i18n="why.t5">Anuncios justos</h3>
+            <p data-i18n="why.d5">Nunca interrumpen en medio de una partida o una lección, y con un solo pago los quitas para siempre.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="section" id="support">
+    <div class="wrap">
+      <div class="support reveal">
+        <div class="support__bg" aria-hidden="true"></div>
+        <div class="support__copy">
+          <p class="eyebrow eyebrow--light"><span class="dot"></span><span data-i18n="support.eyebrow">Apoya a un estudio independiente</span></p>
+          <h2 data-i18n="support.title">Ayúdanos a crear la próxima app</h2>
+          <p data-i18n="support.text">Somos un equipo pequeño. Con tu aporte en Patreon financias nuevas apps, más idiomas y mejoras de accesibilidad. A cambio recibes acceso anticipado, votas las próximas ideas y apareces en los créditos.</p>
+          <ul class="perks">
+            <li><span aria-hidden="true">🚀</span><span data-i18n="support.p1">Acceso anticipado a nuevas apps</span></li>
+            <li><span aria-hidden="true">🗳️</span><span data-i18n="support.p2">Vota qué creamos después</span></li>
+            <li><span aria-hidden="true">💛</span><span data-i18n="support.p3">Tu nombre en los créditos</span></li>
+          </ul>
+          <div class="support__ctas">
+            <a class="btn btn--patreon" id="patreonBtn" href="#support" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14.5" cy="9.5" r="6.5" fill="currentColor" stroke="none"/><rect x="3" y="3" width="3.6" height="18" rx="1" fill="currentColor" stroke="none"/></svg>
+              <span id="patreonLabel" data-i18n="support.patreonSoon">Patreon: muy pronto</span>
+            </a>
+            <button class="btn btn--glass" id="shareBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>
+              <span data-i18n="support.share">Compartir</span>
+            </button>
+          </div>
+          <p class="support__small" data-i18n="support.small">¿No puedes aportar? Compartir el catálogo o dejar una reseña de 5 ⭐ también nos ayuda muchísimo.</p>
+        </div>
+        <div class="support__art" aria-hidden="true">
+          <div class="heart-big"><svg viewBox="0 0 24 24"><use href="#heart"/></svg></div>
+          <span class="bubble b1">⭐</span><span class="bubble b2">🧩</span><span class="bubble b3">🎨</span><span class="bubble b4">💡</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--alt" id="contact">
+    <div class="wrap contact reveal">
+      <div>
+        <p class="eyebrow"><span class="dot"></span><span data-i18n="contact.eyebrow">Hablemos</span></p>
+        <h2 data-i18n="contact.title">¿Ideas, dudas o un error?</h2>
+        <p data-i18n="contact.text">Leemos cada mensaje. Respondemos en español o inglés.</p>
+      </div>
+      <div class="contact__actions">
+        <a class="btn btn--primary" href="mailto:horizon09222026@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><span data-i18n="contact.write">Escríbenos</span></a>
+        <button class="btn btn--ghost" id="copyMail" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-i18n="contact.copy">Copiar correo</span></button>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="#top"><svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg><span class="brand__text"><b>horizon</b>Development</span></a>
+      <p data-i18n="footer.tag">Apps hechas con cariño en Costa Rica.</p>
+    </div>
+    <nav class="footer__col" aria-label="Apps">
+      <h4 data-i18n="footer.apps">Apps</h4>
+      <a href="#app-gloopy">Gloopy Blocks</a>
+      <a href="#app-mundo-chispa">Mundo Chispa</a>
+      <a href="#app-glucodiario">GlucoDiario</a>
+    </nav>
+    <nav class="footer__col" aria-label="Privacidad">
+      <h4 data-i18n="footer.legal">Privacidad</h4>
+      <a href="https://horizon09222026-dot.github.io/gloopy-blocks-legal/privacy.html">Gloopy Blocks</a>
+      <a href="mundo-chispa/privacidad/">Mundo Chispa</a>
+    </nav>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span id="year">2026</span> horizonDevelopment</span>
+    <a href="#top" class="to-top" aria-label="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+  </div>
+</footer>
+
+<!-- Visor de capturas -->
+<dialog class="lightbox" id="lightbox" aria-label="Captura de pantalla">
+  <button class="lightbox__close icon-btn" type="button" aria-label="Cerrar" data-close>✕</button>
+  <button class="lightbox__nav prev icon-btn" type="button" aria-label="Anterior">‹</button>
+  <img id="lightboxImg" alt="">
+  <button class="lightbox__nav next icon-btn" type="button" aria-label="Siguiente">›</button>
+  <p class="lightbox__count" id="lightboxCount"></p>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Íconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg-sun" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="64" y2="64"><stop offset="0" stop-color="#FFB547"/><stop offset=".55" stop-color="#FF5E7E"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="16" fill="url(#lg-sun)"/>
+      <circle cx="32" cy="37" r="13" fill="#fff"/>
+      <rect x="6" y="37" width="52" height="21" fill="url(#lg-sun)"/>
+      <path d="M12 40h40M18 46h28M25 52h14" stroke="#fff" stroke-width="3.2" stroke-linecap="round" opacity=".92"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 4.5 7.3 4.5c2 0 3.5 1.1 4.7 2.7 1.2-1.6 2.7-2.7 4.7-2.7 3.7 0 5.9 3.9 4.6 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  </defs>
+</svg>
 </body>
 </html>
