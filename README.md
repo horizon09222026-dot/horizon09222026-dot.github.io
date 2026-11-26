@@ -20,7 +20,8 @@ Página estática (HTML + CSS + JavaScript moderno, sin servidor ni dependencias
 
 ## Tareas frecuentes
 
-- **Activar Patreon:** pega el enlace en `PATREON_URL` de `assets/js/config.js`.
+- **Patreon:** enlace en `PATREON_URL` de `assets/js/config.js`.
+- **Muro de Supporters:** agrega el nombre (con permiso de la persona) en `data/supporters.json`.
 - **Una app salió en Google Play:** en `data/apps.json` cambia su `"status"` de `"soon"` a `"live"` (aparece el botón "Disponible en Google Play").
 - **Agregar una app nueva:** copia un bloque en `data/apps.json`, pon sus imágenes en `assets/img/apps/<id>/` (o agrégala a `tools/optimizar-imagenes.js` y ejecuta `node tools/optimizar-imagenes.js`), y añade su enlace en el pie de `index.html`.
 - **Actualizar capturas:** vuelve a generar las de la app y ejecuta `node tools/optimizar-imagenes.js`.

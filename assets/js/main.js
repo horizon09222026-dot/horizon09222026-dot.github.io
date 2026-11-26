@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js?v=2';
-import { CONFIG } from './config.js?v=2';
+import { STRINGS } from './i18n.js?v=3';
+import { CONFIG } from './config.js?v=3';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -304,6 +304,16 @@ if (finePointer && !reduced) {
     orbit.style.setProperty('--rx', `${x * 14}deg`); orbit.style.setProperty('--ry', `${-y * 14}deg`);
   });
 }
+
+/* ---------------- Muro de Supporters (data/supporters.json) ---------------- */
+fetch('data/supporters.json', { cache: 'no-cache' })
+  .then(r => r.ok ? r.json() : { supporters: [] })
+  .then(d => {
+    const names = (d.supporters || []).filter(Boolean);
+    $('#wallList').innerHTML = names.map(n => `<li>${esc(n)}</li>`).join('');
+    $('#wallEmpty').hidden = names.length > 0;
+  })
+  .catch(() => {});
 
 /* ---------------- Inicio ---------------- */
 $('#year').textContent = new Date().getFullYear();

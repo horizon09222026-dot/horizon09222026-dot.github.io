@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=3">
+<link rel="stylesheet" href="assets/css/styles.css?v=4">
 
 <script>
   // Tema antes de pintar (evita parpadeo)
@@ -45,7 +45,7 @@
   "email": "horizon09222026@gmail.com"
 }
 </script>
-<script type="module" src="assets/js/main.js?v=2"></script>
+<script type="module" src="assets/js/main.js?v=3"></script>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
@@ -204,11 +204,11 @@
         <div class="support__copy">
           <p class="eyebrow eyebrow--light"><span class="dot"></span><span data-i18n="support.eyebrow">Apoya a un estudio independiente</span></p>
           <h2 data-i18n="support.title">Ayúdanos a crear la próxima app</h2>
-          <p data-i18n="support.text">Somos un equipo pequeño. Con tu aporte en Patreon financias nuevas apps, más idiomas y mejoras de accesibilidad. En nuestra página encontrarás novedades, adelantos y encuestas para decidir qué creamos después.</p>
+          <p data-i18n="support.text">Somos un equipo pequeño. Como Supporter en Patreon (US$3 al mes) financias nuevas apps, más idiomas y mejoras de accesibilidad, y nos acompañas de cerca en lo que viene.</p>
           <ul class="perks">
-            <li><span aria-hidden="true">📣</span><span data-i18n="support.p1">Novedades y adelantos</span></li>
-            <li><span aria-hidden="true">🗳️</span><span data-i18n="support.p2">Encuestas para decidir lo siguiente</span></li>
-            <li><span aria-hidden="true">💜</span><span data-i18n="support.p3">Apps justas, sin pagar para ganar</span></li>
+            <li><span aria-hidden="true">📣</span><span data-i18n="support.p1">Avance mensual solo para miembros</span></li>
+            <li><span aria-hidden="true">🗳️</span><span data-i18n="support.p2">Vota qué creamos después</span></li>
+            <li><span aria-hidden="true">💜</span><span data-i18n="support.p3">Tu nombre en el muro de Supporters</span></li>
           </ul>
           <div class="support__ctas">
             <a class="btn btn--patreon" id="patreonBtn" href="#support" aria-disabled="true">
@@ -226,6 +226,11 @@
           <div class="heart-big"><svg viewBox="0 0 24 24"><use href="#heart"/></svg></div>
           <span class="bubble b1">⭐</span><span class="bubble b2">🧩</span><span class="bubble b3">🎨</span><span class="bubble b4">💡</span>
         </div>
+      </div>
+      <div class="wall reveal" id="wall">
+        <h3><span aria-hidden="true">💜</span> <span data-i18n="wall.title">Muro de Supporters</span></h3>
+        <ul class="wall__list" id="wallList"></ul>
+        <p class="wall__empty" id="wallEmpty" data-i18n="wall.empty">Sé la primera persona en aparecer aquí 💜</p>
       </div>
     </div>
   </section>
