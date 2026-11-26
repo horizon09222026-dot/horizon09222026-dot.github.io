@@ -1,5 +1,5 @@
-import { STRINGS } from './i18n.js';
-import { CONFIG } from './config.js';
+import { STRINGS } from './i18n.js?v=2';
+import { CONFIG } from './config.js?v=2';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
